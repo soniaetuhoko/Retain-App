@@ -2,7 +2,7 @@
 
 Retain is a personal expense and budget tracker. Each person signs in, records their own spending, and sets one budget for the month. An admin can manage the shared categories and see how the whole platform is being used.
 
-Live app: add the deployed URL here before submission.
+Live app: https://retain-app-q8bb.onrender.com
 
 ## Technologies used
 

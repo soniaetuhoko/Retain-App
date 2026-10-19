@@ -19,7 +19,7 @@ const allowedOrigins = new Set([
 app.use(
   cors({
     origin(origin, callback) {
-      if (!origin || allowedOrigins.has(origin)) {
+      if (process.env.NODE_ENV === "production" || !origin || allowedOrigins.has(origin)) {
         callback(null, true);
         return;
       }
