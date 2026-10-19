@@ -78,14 +78,14 @@ npm run dev
 `frontend/.env` should contain:
 
 ```text
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=http://localhost:5000
 ```
 
 7. Open the address Vite prints, usually `http://localhost:5173`.
 
 Sign up creates a personal account. To open Admin and Categories, sign in with `soniaadmin@gmail.com` and `AdminSonia224` after `npm run seed`.
 
-For a hosted database, put the MongoDB Atlas connection string in `MONGODB_URI`. For a hosted website, set `CLIENT_ORIGIN` to that site and set `VITE_API_URL` to the hosted API address ending in `/api`.
+The live site is one Render web service. It serves the website and the API on the same address. On Render, set `MONGODB_URI` to the Atlas connection string and set `JWT_SECRET`. Do not set `VITE_API_URL` there. The live website calls `/api` on its own address.
 
 ## API
 

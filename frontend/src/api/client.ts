@@ -11,12 +11,13 @@ import type {
   User,
 } from "../types";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const configured = import.meta.env.VITE_API_URL?.trim().replace(/\/$/, "") ?? "";
+const API_URL = configured
+  ? configured.endsWith("/api")
+    ? configured
+    : `${configured}/api`
+  : "/api";
 export const TOKEN_KEY = "retain_token";
-
-if (!API_URL) {
-  throw new Error("VITE_API_URL is missing");
-}
 
 async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   const token = localStorage.getItem(TOKEN_KEY);
